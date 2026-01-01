@@ -1,0 +1,41 @@
+[package]
+name = "ClipFocusServer"
+version = "0.1.0" 
+edition = "2024"
+
+[dependencies]
+dotenvy = "0.15"
+chrono = { version = "0.4", features = ["serde"] }
+serde_repr = "0.1"  # 用于枚举的序列化
+serde = { version = "1.0", features = ["derive"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# 数据库
+sqlx = { version = "0.6", features = ["runtime-tokio-native-tls", "sqlite", "chrono", "uuid"] }
+
+# web
+actix-web = "4"
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+serde_json = "1.0"
+env_logger = "0.10"
+hex = "0.4" # For displaying PeerId easily 
+multiaddr = "0.18.2" # To parse multiaddrs 
+colored = "3.0.0"
+md5 = "0.7.0"
+rand = "0.9.1"
+serde_yaml = "0.9.34"
+yansi = "1.0.1"
+log = "0.4.27"
+
+jsonwebtoken = "8.0"
+base64 = "0.21"     # 用于Base64编解码
+blake3 = "1.4"
+sled = "0.34.7"
+actix-web-actors = "4.3.1"
+actix = "0.13.5"
+dotenv_codegen = "0.15.0"
+
+# 开发依赖
+[dev-dependencies]
+sqlx = { version = "0.6", features = ["sqlite", "migrate"] }
