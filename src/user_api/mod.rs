@@ -25,7 +25,7 @@ pub fn user_api() -> actix_web::Scope {
         .service(change_password)
         .service(get_user_info);
 }
-
+ 
 #[derive(Debug, Deserialize)]
 pub struct User {
     pub user_id: String,
